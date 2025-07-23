@@ -1,4 +1,5 @@
 ﻿using Accounting.DataLayer;
+using Accounting.DataLayer.Context;
 using Accounting.DataLayer.Repositories;
 using Accounting.DataLayer.Services;
 using System;
@@ -13,23 +14,27 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Accounting_DBEntities db = new Accounting_DBEntities(); //context injection way
-            ICustomerRepository customer = new CustomerRepository(db);
-            //Customers AddCustomer = new Customers()
+            //Accounting_DBEntities db = new Accounting_DBEntities(); //context injection way
+            //ICustomerRepository customer = new CustomerRepository(db);
+            ////Customers AddCustomer = new Customers()
+            ////{
+            ////    Fullname = "yeganeh",
+            ////    Mobile = "09121919",
+            ////    Email = "yeganeh@gmail.com",
+            ////    Address = "tehran niyavaran",
+            ////    CustomerImage = "no photo"
+            ////};
+            ////customer.InsertCustomers(AddCustomer);
+            ////customer.Save();
+            //var list = customer.GetAllCustomers();
+            //foreach (var item in list)
             //{
-            //    Fullname = "yeganeh",
-            //    Mobile = "09121919",
-            //    Email = "yeganeh@gmail.com",
-            //    Address = "tehran niyavaran",
-            //    CustomerImage = "no photo"
-            //};
-            //customer.InsertCustomers(AddCustomer);
-            //customer.Save();
-            var list = customer.GetAllCustomers();
-            foreach (var item in list)
-            {
-                Console.WriteLine(item.Fullname);
-            }
+            //    Console.WriteLine(item.Fullname);
+            //}
+
+            UnitOfWork db = new UnitOfWork();
+            var list = db.CustomerRepository.GetAllCustomers();
+            db.Dispose(); // Dispose the UnitOfWork to release resources
         }
     }
 }
