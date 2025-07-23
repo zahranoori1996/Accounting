@@ -10,6 +10,9 @@ namespace Accounting.DataLayer.Repositories
     {
         //notice: this is a repository interface for managing customer data
 
+        IEnumerable<Customers> GetCustomersByFilter(string parameter);
+
+
         //read
         List<Customers> GetAllCustomers();
         //read
