@@ -80,11 +80,7 @@ namespace Accounting.DataLayer.Services
                 return false;
             }
         }
-        public void Save()
-        {
-            db.SaveChanges();
-        }
-
+    
         public IEnumerable<Customers> GetCustomersByFilter(string parameter)
         {
             return db.Customers

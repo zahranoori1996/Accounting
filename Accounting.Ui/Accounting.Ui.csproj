@@ -15,6 +15,21 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -42,6 +57,7 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Janus.Windows.Common.v4, Version=4.0.52.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -56,24 +72,63 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Custoomers\FrmAddOrEditCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Custoomers\FrmAddOrEditCustomer.Designer.cs">
+      <DependentUpon>FrmAddOrEditCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmCustomers.cs">
+    <Compile Include="Custoomers\FrmCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCustomers.Designer.cs">
+    <Compile Include="Custoomers\FrmCustomers.Designer.cs">
       <DependentUpon>FrmCustomers.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WinValidator\Validator\BaseValidator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WinValidator\Validator\BaseValidator.designer.cs">
+      <DependentUpon>BaseValidator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinValidator\Validator\CustomValidator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WinValidator\Validator\CustomValidator.designer.cs">
+      <DependentUpon>CustomValidator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinValidator\Validator\RangeValidator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WinValidator\Validator\RangeValidator.designer.cs">
+      <DependentUpon>RangeValidator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinValidator\Validator\RegularExpressionValidator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WinValidator\Validator\RegularExpressionValidator.designer.cs">
+      <DependentUpon>RegularExpressionValidator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinValidator\Validator\RequiredFieldValidator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WinValidator\Validator\RequiredFieldValidator.designer.cs">
+      <DependentUpon>RequiredFieldValidator.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Custoomers\FrmAddOrEditCustomer.resx">
+      <DependentUpon>FrmAddOrEditCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCustomers.resx">
+    <EmbeddedResource Include="Custoomers\FrmCustomers.resx">
       <DependentUpon>FrmCustomers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -162,6 +217,28 @@
       <Project>{1006d684-70c5-4642-a282-9754362e9cf0}</Project>
       <Name>Accounting.DataLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Accounting.Utility\Accounting.Utility.csproj">
+      <Project>{f1a0a3cf-a828-4caa-87fd-5d3c9216d85d}</Project>
+      <Name>Accounting.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="WinValidator\New Text Document.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

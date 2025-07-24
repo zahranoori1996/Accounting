@@ -10,6 +10,7 @@ namespace Accounting.DataLayer.Repositories
     {
         //notice: this is a repository interface for managing customer data
 
+        //read data by filter
         IEnumerable<Customers> GetCustomersByFilter(string parameter);
 
 
@@ -26,6 +27,6 @@ namespace Accounting.DataLayer.Repositories
         //delete
         bool DeleteCustomer(int customerId);
         //save
-        void Save();
+        //save is not needed in repository interface, it is handled by UnitOfWork
     }
 }

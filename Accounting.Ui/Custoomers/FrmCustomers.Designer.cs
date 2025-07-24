@@ -1,4 +1,4 @@
-﻿namespace Accounting.Ui
+﻿namespace Accounting.Ui.Custoomers
 {
     partial class FrmCustomers
     {
@@ -33,8 +33,8 @@
             this.btnEditCustomer = new System.Windows.Forms.ToolStripButton();
             this.btnDeleteCustomer = new System.Windows.Forms.ToolStripButton();
             this.btnRefreshCustomer = new System.Windows.Forms.ToolStripButton();
-            this.txtFilter = new System.Windows.Forms.ToolStripTextBox();
             this.lblSearch = new System.Windows.Forms.ToolStripLabel();
+            this.txtFilter = new System.Windows.Forms.ToolStripTextBox();
             this.dgvCustomers = new System.Windows.Forms.DataGridView();
             this.ColCustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColFullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +55,7 @@
             this.txtFilter});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(584, 62);
+            this.toolStrip1.Size = new System.Drawing.Size(584, 72);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -65,9 +65,11 @@
             this.btnAddNewCustomer.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnAddNewCustomer.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddNewCustomer.Name = "btnAddNewCustomer";
-            this.btnAddNewCustomer.Size = new System.Drawing.Size(70, 59);
+            this.btnAddNewCustomer.Padding = new System.Windows.Forms.Padding(5);
+            this.btnAddNewCustomer.Size = new System.Drawing.Size(80, 69);
             this.btnAddNewCustomer.Text = "شخص جدید";
             this.btnAddNewCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnAddNewCustomer.Click += new System.EventHandler(this.btnAddNewCustomer_Click);
             // 
             // btnEditCustomer
             // 
@@ -75,7 +77,8 @@
             this.btnEditCustomer.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnEditCustomer.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditCustomer.Name = "btnEditCustomer";
-            this.btnEditCustomer.Size = new System.Drawing.Size(83, 59);
+            this.btnEditCustomer.Padding = new System.Windows.Forms.Padding(5);
+            this.btnEditCustomer.Size = new System.Drawing.Size(93, 69);
             this.btnEditCustomer.Text = "ویرایش شخص";
             this.btnEditCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
@@ -85,9 +88,11 @@
             this.btnDeleteCustomer.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnDeleteCustomer.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDeleteCustomer.Name = "btnDeleteCustomer";
-            this.btnDeleteCustomer.Size = new System.Drawing.Size(72, 59);
+            this.btnDeleteCustomer.Padding = new System.Windows.Forms.Padding(5);
+            this.btnDeleteCustomer.Size = new System.Drawing.Size(82, 69);
             this.btnDeleteCustomer.Text = "حذف شخص";
             this.btnDeleteCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDeleteCustomer.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
             // 
             // btnRefreshCustomer
             // 
@@ -95,23 +100,24 @@
             this.btnRefreshCustomer.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnRefreshCustomer.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnRefreshCustomer.Name = "btnRefreshCustomer";
-            this.btnRefreshCustomer.Size = new System.Drawing.Size(64, 59);
+            this.btnRefreshCustomer.Padding = new System.Windows.Forms.Padding(5);
+            this.btnRefreshCustomer.Size = new System.Drawing.Size(74, 69);
             this.btnRefreshCustomer.Text = "بروز رسانی";
             this.btnRefreshCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnRefreshCustomer.Click += new System.EventHandler(this.btnRefreshCustomer_Click);
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(50, 69);
+            this.lblSearch.Text = "جستجو : ";
             // 
             // txtFilter
             // 
             this.txtFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtFilter.Name = "txtFilter";
-            this.txtFilter.Size = new System.Drawing.Size(100, 62);
+            this.txtFilter.Size = new System.Drawing.Size(100, 72);
             this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
-            // 
-            // lblSearch
-            // 
-            this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(50, 59);
-            this.lblSearch.Text = "جستجو : ";
             // 
             // dgvCustomers
             // 
@@ -125,10 +131,10 @@
             this.ColMobile,
             this.ColEmail});
             this.dgvCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCustomers.Location = new System.Drawing.Point(0, 62);
+            this.dgvCustomers.Location = new System.Drawing.Point(0, 72);
             this.dgvCustomers.Name = "dgvCustomers";
             this.dgvCustomers.ReadOnly = true;
-            this.dgvCustomers.Size = new System.Drawing.Size(584, 299);
+            this.dgvCustomers.Size = new System.Drawing.Size(584, 289);
             this.dgvCustomers.TabIndex = 1;
             // 
             // ColCustomerID
@@ -171,6 +177,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmCustomers";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "لیست اشخاص";
             this.Load += new System.EventHandler(this.FrmCustomers_Load);

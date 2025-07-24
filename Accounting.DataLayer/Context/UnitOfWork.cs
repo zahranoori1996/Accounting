@@ -25,6 +25,10 @@ namespace Accounting.DataLayer.Context
             } 
         }
 
+        public void Save()
+        {
+            db.SaveChanges();
+        }
 
 
         //
